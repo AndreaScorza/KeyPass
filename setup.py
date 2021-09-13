@@ -1,12 +1,8 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='KeyPass',
-    version='',
-    packages=[''],
-    url='',
-    license='',
-    author='andrea',
-    author_email='atlantas95@gmail.com',
-    description='KeyPass'
+    extras_require=dict(tests=['pytest']),
+    package=find_packages(where='src'),
+    package_dir={"":"src"},
 )

@@ -55,7 +55,7 @@ def main():
 def saveToken(token, title, description):
     title = ' '.join(map(str, title))
     config = configparser.ConfigParser()
-    if os.path.exists('config.ini'):
+    if os.path.exists('../../config.ini'):
         config.read('config.ini')
         if title in config.sections():
             raise Exception("Title already present")
@@ -63,7 +63,7 @@ def saveToken(token, title, description):
     config.set(title, 'token', token)
     if description:
         config.set(title, 'description', ' '.join(map(str, description)))
-    config.write(open('config.ini', 'w'))
+    config.write(open('../../config.ini', 'w'))
 
 
 
